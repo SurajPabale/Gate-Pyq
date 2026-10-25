@@ -1,0 +1,81 @@
+{
+  "bankStatus": "DEMO_UNVERIFIED",
+  "notice": "Illustrative starter questions only. Not source-grounded, independently audited, verified against an official GATE syllabus, or suitable as a GATE mock test.",
+  "questions": [
+    {
+      "id": "demo-bio-001",
+      "type": "MCQ",
+      "topic": "Biochemistry",
+      "subtopic": "Protein structure",
+      "syllabusCode": null,
+      "marks": 1,
+      "text": "Which bond primarily stabilizes the α-helix structure in a protein?",
+      "options": ["Hydrogen bond", "Disulfide bond", "Peptide bond", "Ionic bond"],
+      "answer": ["Hydrogen bond"],
+      "explanation": "The α-helix is stabilized by hydrogen bonds between backbone carbonyl and amide groups.",
+      "natTolerance": null,
+      "sourceReferences": [],
+      "verificationStatus": "NEEDS REVIEW"
+    },
+    {
+      "id": "demo-bio-002",
+      "type": "MSQ",
+      "topic": "Biochemistry",
+      "subtopic": "Nucleic acids",
+      "syllabusCode": null,
+      "marks": 1,
+      "text": "Which of the following are pyrimidine bases found in nucleic acids?",
+      "options": ["Cytosine", "Adenine", "Thymine", "Guanine"],
+      "answer": ["Cytosine", "Thymine"],
+      "explanation": "Cytosine and thymine are pyrimidines; adenine and guanine are purines.",
+      "natTolerance": null,
+      "sourceReferences": [],
+      "verificationStatus": "NEEDS REVIEW"
+    },
+    {
+      "id": "demo-bio-003",
+      "type": "NAT",
+      "topic": "Biochemistry",
+      "subtopic": "Concentration calculations",
+      "syllabusCode": null,
+      "marks": 1,
+      "text": "A solution contains 0.5 mol of solute in 2 L. What is its concentration in mol L⁻¹?",
+      "options": [],
+      "answer": ["0.25"],
+      "explanation": "Molarity is moles of solute divided by solution volume: 0.5 / 2 = 0.25 mol L⁻¹.",
+      "natTolerance": 0,
+      "sourceReferences": [],
+      "verificationStatus": "NEEDS REVIEW"
+    },
+    {
+      "id": "demo-bio-004",
+      "type": "MCQ",
+      "topic": "Biochemistry",
+      "subtopic": "Molecular biology",
+      "syllabusCode": null,
+      "marks": 1,
+      "text": "Which enzyme synthesizes RNA using a DNA template during transcription?",
+      "options": ["DNA ligase", "RNA polymerase", "Reverse transcriptase", "DNA primase"],
+      "answer": ["RNA polymerase"],
+      "explanation": "RNA polymerase reads the DNA template strand and catalyzes RNA synthesis.",
+      "natTolerance": null,
+      "sourceReferences": [],
+      "verificationStatus": "NEEDS REVIEW"
+    },
+    {
+      "id": "demo-bio-005",
+      "type": "MCQ",
+      "topic": "Biochemistry",
+      "subtopic": "Enzyme kinetics",
+      "syllabusCode": null,
+      "marks": 1,
+      "text": "In Michaelis–Menten kinetics, Km is the substrate concentration at which the reaction velocity is:",
+      "options": ["Vmax", "Vmax / 2", "2Vmax", "Zero"],
+      "answer": ["Vmax / 2"],
+      "explanation": "Km is defined as the substrate concentration at which velocity reaches half of Vmax.",
+      "natTolerance": null,
+      "sourceReferences": [],
+      "verificationStatus": "NEEDS REVIEW"
+    }
+  ]
+}

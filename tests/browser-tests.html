@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GATEprep browser tests</title>
+  <style>
+    body { margin: 0; padding: 24px; background: #10131a; color: #e8eaf0; font: 15px/1.5 system-ui, sans-serif; }
+    main { max-width: 900px; margin: auto; }
+    button { border: 0; border-radius: 6px; background: #a88cff; color: #17131f; padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; }
+    #summary { margin: 16px 0; }
+    #test-results { display: grid; gap: 8px; padding: 0; list-style: none; }
+    #test-results li { border: 1px solid #343946; border-radius: 6px; padding: 9px 12px; }
+    .pass { color: #8ce0ae; } .fail { color: #ff9999; }
+    iframe { position: fixed; width: 390px; height: 740px; left: -10000px; top: 0; border: 0; }
+  </style>
+  <script src="browser-tests.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>GATEprep browser tests</h1>
+    <p>Runs browser-level checks against the app pages and local storage. Existing GATEprep storage is restored when the suite ends.</p>
+    <button id="run-tests" type="button">Run CBT tests</button>
+    <p id="summary" role="status">Not run</p>
+    <ol id="test-results"></ol>
+    <iframe id="app-frame" title="Application under test"></iframe>
+  </main>
+</body>
+</html>

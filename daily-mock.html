@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d12">
+  <title>Daily mock · GATEprep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/timer.js" defer></script>
+  <script src="js/quiz-engine.js" defer></script>
+</head>
+<body>
+  <main class="dashboard-content">
+    <header class="topbar quiz-topbar">
+      <a class="brand" href="index.html"><span class="brand-mark">G<span>.</span></span><span class="brand-name">GATE<span>prep</span></span></a>
+      <div class="topbar-actions"><div class="study-timer"><span class="live-dot"></span><span>Time left</span><strong id="quiz-timer">03:00:00</strong></div><a class="text-link" href="index.html">Exit test</a></div>
+    </header>
+    <section class="welcome-row">
+      <div><div class="eyebrow"><span class="eyebrow-line"></span><span id="test-mode-label">PRACTICE TEST</span></div><h1 id="test-title">Practice <span>session</span></h1><p class="welcome-copy" id="test-subtitle">Loading available questions…</p></div>
+      <button class="button button-primary" id="submit-test" type="button" disabled>Submit test</button>
+    </section>
+    <div class="test-warning" id="test-warning" role="status"></div>
+    <section class="section-card" id="quiz-root" aria-live="polite">
+      <div class="section-heading"><div><div class="section-kicker">QUESTION <span id="question-number">1</span> OF <span id="question-total">65</span></div><h2 id="question-title">Loading practice question…</h2></div><span class="today-pill" id="question-type">MCQ</span></div>
+      <p class="question-subtopic" id="question-subtopic"></p>
+      <div id="question-options" class="quiz-options"></div>
+      <div class="practice-item quiz-controls"><button class="button button-outline" id="clear-response" type="button" disabled>Clear response</button><button class="button button-outline" id="mark-review" type="button" disabled>Mark for review</button><span class="quiz-spacer"></span><button class="button button-outline" id="previous-question" type="button" disabled>← Previous</button><button class="button button-primary" id="next-question" type="button" disabled>Save &amp; next →</button></div>
+    </section>
+    <section class="section-card" style="margin-top:16px">
+      <div class="section-heading"><div><div class="section-kicker">QUESTION PALETTE</div><h2>Navigate the test</h2></div><span class="welcome-copy" id="answer-summary">0 answered</span></div>
+      <div class="palette-legend"><span><i class="palette-dot not-visited"></i>Not visited</span><span><i class="palette-dot answered"></i>Answered</span><span><i class="palette-dot marked"></i>Marked for review</span></div>
+      <div class="question-palette" id="question-palette"></div>
+    </section>
+  </main>
+</body>
+</html>
