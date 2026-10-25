@@ -30,7 +30,19 @@
         <section class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-line"></span>FOCUSED PRACTICE</div><h1>Choose your <span>focus.</span></h1><p class="welcome-copy">Pick a course and topic to find your next practice session.</p></div></section>
         <section class="section-card">
           <div class="section-heading"><div><div class="section-kicker">GATE EXAM TRACKS</div><h2>Explore the syllabus</h2></div></div>
+          <p class="test-warning">Syllabus outline: unverified draft. Official GATE 2027 section codes and source documents have not been checked.</p>
           <div id="syllabus-sections" class="syllabus-grid"><p class="welcome-copy">Loading syllabus…</p></div>
+        </section>
+        <section class="section-card practice-builder">
+          <div class="section-heading"><div><div class="section-kicker">AVAILABLE PRACTICE BANK</div><h2>Build a practice session</h2></div></div>
+          <p class="test-warning" id="bank-warning" role="status">Loading question-bank availability…</p>
+          <form id="practice-form" class="practice-form">
+            <label>Topic<select id="practice-topic" required></select></label>
+            <label>Question count<select id="practice-count"></select></label>
+            <label>Time limit<select id="practice-duration"><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="45">45 minutes</option><option value="90">90 minutes</option></select></label>
+            <fieldset><legend>Question formats</legend><label><input type="checkbox" name="practice-type" value="MCQ" checked> MCQ</label><label><input type="checkbox" name="practice-type" value="MSQ" checked> MSQ</label><label><input type="checkbox" name="practice-type" value="NAT" checked> NAT</label></fieldset>
+            <button class="button button-primary" type="submit">Start topic practice</button>
+          </form>
         </section>
       </div>
     </main>

@@ -64,9 +64,14 @@
   async function loadTopics() {
     const container = byId("topic-chips");
     try {
-      const response = await fetch("data/syllabus.json");
-      if (!response.ok) throw new Error(`Unable to load syllabus (${response.status})`);
-      const syllabus = await response.json();
+      const [syllabusResponse, questionResponse] = await Promise.all([
+        fetch("data/syllabus.json"),
+        fetch("data/questions.json"),
+      ]);
+      if (!syllabusResponse.ok) throw new Error(`Unable to load syllabus (${syllabusResponse.status})`);
+      if (!questionResponse.ok) throw new Error(`Unable to load question bank (${questionResponse.status})`);
+      const syllabus = await syllabusResponse.json();
+      const questionBank = await questionResponse.json();
       const topics = [
         ...syllabus.XL.sections.flatMap((section) => section.topics.map((topic) => ({ topic, course: "XL" }))),
         ...syllabus.BT.sections.flatMap((section) => section.topics.map((topic) => ({ topic, course: "BT" }))),
@@ -97,18 +102,63 @@
           const title = document.createElement("h3");
           title.textContent = section.name;
           const code = document.createElement("span");
-          code.textContent = `${course} · ${section.code}`;
+          code.textContent = `${course} · syllabus outline`;
           heading.append(title, code);
           article.append(heading);
           section.topics.forEach((topic) => {
             const link = document.createElement("a");
             link.className = "topic-chip";
-            link.href = `daily-mock.html?course=${course}&topic=${encodeURIComponent(topic)}`;
+            link.href = `topic-test.html?course=${course}&topic=${encodeURIComponent(topic)}`;
             link.textContent = topic;
             article.append(link);
           });
           return article;
         })));
+      }
+
+      const practiceTopic = byId("practice-topic");
+      const practiceCount = byId("practice-count");
+      const practiceForm = byId("practice-form");
+      const bankWarning = byId("bank-warning");
+      if (practiceTopic && practiceCount && practiceForm && bankWarning) {
+        const availableTopics = [...new Set(questionBank.questions.flatMap((question) => [question.topic, question.subtopic].filter(Boolean)))];
+        practiceTopic.replaceChildren(...availableTopics.map((topic) => {
+          const option = document.createElement("option");
+          option.value = topic;
+          option.textContent = topic;
+          return option;
+        }));
+        const selectedTopic = new URLSearchParams(window.location.search).get("topic");
+        if (availableTopics.includes(selectedTopic)) practiceTopic.value = selectedTopic;
+        const updateCountOptions = () => {
+          const count = questionBank.questions.filter((question) => question.topic === practiceTopic.value || question.subtopic === practiceTopic.value).length;
+          practiceCount.replaceChildren(...Array.from({ length: count }, (_, index) => {
+            const option = document.createElement("option");
+            option.value = String(index + 1);
+            option.textContent = `${index + 1} ${index === 0 ? "question" : "questions"}`;
+            return option;
+          }));
+        };
+        practiceTopic.addEventListener("change", updateCountOptions);
+        updateCountOptions();
+        bankWarning.textContent = `${questionBank.bankStatus}: ${questionBank.notice} The current bank has ${questionBank.questions.length} sample questions and cannot supply a full-length mock.`;
+        practiceForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const types = [...practiceForm.querySelectorAll('input[name="practice-type"]:checked')].map((input) => input.value);
+          if (!types.length) {
+            bankWarning.textContent = "Select at least one question format.";
+            return;
+          }
+          const params = new URLSearchParams({
+            mode: "topic",
+            topic: practiceTopic.value,
+            count: practiceCount.value,
+            duration: practiceForm.querySelector("#practice-duration").value,
+            types: types.join(","),
+            attempt: crypto.randomUUID(),
+          });
+          window.location.href = `daily-mock.html?${params}`;
+        });
       }
     } catch (error) {
       if (container) container.textContent = "Syllabus topics are unavailable right now.";
@@ -133,6 +183,14 @@
     }
   }
 
+  function syncDateOnResume() {
+    window.addEventListener("pageshow", () => {
+      const date = byId("current-date");
+      if (date) updateDate();
+      updateStudyTime();
+    });
+  }
+
   updateDate();
   updateStudyTime();
   window.setInterval(updateStudyTime, 1000);
@@ -142,5 +200,6 @@
   }, { once: true });
   setupNavigation();
   updatePracticeSummary();
+  syncDateOnResume();
   loadTopics();
 })();

@@ -1,5 +1,6 @@
 (() => {
   const historyContainer = document.getElementById("result-history");
+  const formatMarks = (value) => Number.isInteger(Number(value)) ? String(Number(value)) : Number(value).toFixed(2);
   let history = [];
   try {
     history = JSON.parse(localStorage.getItem("gateprep-results") || "[]");
@@ -17,7 +18,9 @@
   document.getElementById("result-accuracy").textContent = questionsAnswered
     ? String(Math.round((totalCorrect / questionsAnswered) * 100))
     : "—";
-  document.getElementById("result-score").textContent = history.length ? String(history[0].score ?? "—") : "—";
+  document.getElementById("result-score").textContent = history.length && history[0].scorePolicy
+    ? String(history[0].score ?? "—")
+    : "—";
 
   if (!history.length) return;
   historyContainer.replaceChildren(...history.map((result) => {
@@ -32,16 +35,29 @@
     heading.append(title, date);
 
     const breakdown = document.createElement("p");
-    breakdown.textContent = `${result.correct || 0} correct · ${result.answered || 0} answered · ${result.total || 0} questions`;
+    breakdown.textContent = result.scorePolicy
+      ? `${result.correct || 0} correct · ${result.answered || 0} answered · ${result.total || 0} questions · ${result.score ?? 0} / ${result.maxScore ?? result.total ?? 0} marks`
+      : `${result.correct || 0} correct · ${result.answered || 0} answered · ${result.total || 0} questions · legacy score (mark total unavailable)`;
     card.append(heading, breakdown);
+    if (result.scorePolicy) {
+      const policy = document.createElement("p");
+      policy.className = "score-policy";
+      policy.textContent = result.scorePolicy;
+      card.append(policy);
+    }
     if (Array.isArray(result.questions)) {
       result.questions.forEach((question, index) => {
         const detail = document.createElement("details");
         detail.className = "explanation-item";
         const summary = document.createElement("summary");
-        summary.textContent = `Q${index + 1} · ${question.isCorrect ? "Correct" : "Review"} · ${question.type}`;
+        const correct = question.correct ?? question.isCorrect ?? false;
+        summary.textContent = `Q${index + 1} · ${correct ? "Correct" : "Review"} · ${question.type}${question.marksAwarded == null ? "" : ` · ${formatMarks(question.marksAwarded)} marks`}`;
         const explanation = document.createElement("p");
-        explanation.textContent = `${question.explanation} Correct answer: ${question.answer.join(", ")}.`;
+        const selected = question.selected.length ? question.selected.join(", ") : "Not answered";
+        const source = Array.isArray(question.sourceReferences) && question.sourceReferences.length
+          ? ` Sources: ${question.sourceReferences.join("; ")}.`
+          : " No source references are recorded.";
+        explanation.textContent = `${question.explanation} Your response: ${selected}. Correct answer: ${question.answer.join(", ")}. Verification: ${question.verificationStatus || "NEEDS REVIEW"}.${source}`;
         detail.append(summary, explanation);
         card.append(detail);
       });

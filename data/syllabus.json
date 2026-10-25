@@ -1,34 +1,37 @@
 {
+  "syllabusVersion": "UNVERIFIED DRAFT",
+  "sourceStatus": "NEEDS REVIEW",
+  "sourceReferences": [],
   "XL": {
     "name": "GATE Life Sciences",
     "sections": [
       {
-        "code": "XL-A",
+        "id": "xl-chemistry",
         "name": "Chemistry",
         "topics": ["Atomic structure", "Chemical equilibrium", "Thermodynamics", "Organic reaction mechanisms", "Biomolecules"]
       },
       {
-        "code": "XL-B",
+        "id": "xl-biochemistry",
         "name": "Biochemistry",
         "topics": ["Protein structure", "Enzyme kinetics", "Carbohydrate metabolism", "Lipid metabolism", "Molecular biology"]
       },
       {
-        "code": "XL-C",
+        "id": "xl-botany",
         "name": "Botany",
         "topics": ["Plant physiology", "Plant anatomy", "Genetics", "Plant ecology", "Plant biotechnology"]
       },
       {
-        "code": "XL-D",
+        "id": "xl-microbiology",
         "name": "Microbiology",
         "topics": ["Microbial growth", "Microbial genetics", "Virology", "Immunology", "Microbial ecology"]
       },
       {
-        "code": "XL-E",
+        "id": "xl-zoology",
         "name": "Zoology",
         "topics": ["Animal physiology", "Cell biology", "Developmental biology", "Evolution", "Animal diversity"]
       },
       {
-        "code": "XL-F",
+        "id": "xl-food-technology",
         "name": "Food Technology",
         "topics": ["Food chemistry", "Food microbiology", "Food processing", "Food preservation", "Food safety"]
       }
@@ -38,32 +41,32 @@
     "name": "GATE Biotechnology",
     "sections": [
       {
-        "code": "BT-1",
+        "id": "bt-engineering-mathematics",
         "name": "Engineering Mathematics",
         "topics": ["Linear algebra", "Calculus", "Differential equations", "Probability and statistics", "Numerical methods"]
       },
       {
-        "code": "BT-2",
+        "id": "bt-general-biotechnology",
         "name": "General Biotechnology",
         "topics": ["Biochemistry", "Microbiology", "Cell biology", "Molecular biology", "Immunology"]
       },
       {
-        "code": "BT-3",
+        "id": "bt-recombinant-dna",
         "name": "Recombinant DNA Technology",
         "topics": ["Cloning vectors", "Gene libraries", "PCR", "DNA sequencing", "Gene expression"]
       },
       {
-        "code": "BT-4",
+        "id": "bt-plant-animal-biotechnology",
         "name": "Plant and Animal Biotechnology",
         "topics": ["Plant tissue culture", "Transgenic plants", "Animal cell culture", "Stem cells", "Gene therapy"]
       },
       {
-        "code": "BT-5",
+        "id": "bt-bioprocess-engineering",
         "name": "Bioprocess Engineering",
         "topics": ["Bioreactor design", "Kinetics", "Mass transfer", "Scale-up", "Downstream processing"]
       },
       {
-        "code": "BT-6",
+        "id": "bt-process-biotechnology",
         "name": "Process Biotechnology",
         "topics": ["Fermentation", "Enzyme technology", "Bioseparations", "Bioprocess control", "Industrial biotechnology"]
       }
