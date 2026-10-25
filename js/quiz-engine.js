@@ -257,8 +257,8 @@
     elements.warning.textContent = bankWarning;
     if (!session.endAt) session.endAt = Date.now() + durationMinutes * 60 * 1000;
     saveSession();
-    window.dispatchEvent(new CustomEvent("gateprep:timer-start", { detail: { attemptId, endAt: session.endAt } }));
     renderQuestion();
+    window.dispatchEvent(new CustomEvent("gateprep:timer-start", { detail: { attemptId, endAt: session.endAt } }));
   }
 
   document.getElementById("next-question").addEventListener("click", moveNext);
