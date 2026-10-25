@@ -1,0 +1,72 @@
+{
+  "XL": {
+    "name": "GATE Life Sciences",
+    "sections": [
+      {
+        "code": "XL-A",
+        "name": "Chemistry",
+        "topics": ["Atomic structure", "Chemical equilibrium", "Thermodynamics", "Organic reaction mechanisms", "Biomolecules"]
+      },
+      {
+        "code": "XL-B",
+        "name": "Biochemistry",
+        "topics": ["Protein structure", "Enzyme kinetics", "Carbohydrate metabolism", "Lipid metabolism", "Molecular biology"]
+      },
+      {
+        "code": "XL-C",
+        "name": "Botany",
+        "topics": ["Plant physiology", "Plant anatomy", "Genetics", "Plant ecology", "Plant biotechnology"]
+      },
+      {
+        "code": "XL-D",
+        "name": "Microbiology",
+        "topics": ["Microbial growth", "Microbial genetics", "Virology", "Immunology", "Microbial ecology"]
+      },
+      {
+        "code": "XL-E",
+        "name": "Zoology",
+        "topics": ["Animal physiology", "Cell biology", "Developmental biology", "Evolution", "Animal diversity"]
+      },
+      {
+        "code": "XL-F",
+        "name": "Food Technology",
+        "topics": ["Food chemistry", "Food microbiology", "Food processing", "Food preservation", "Food safety"]
+      }
+    ]
+  },
+  "BT": {
+    "name": "GATE Biotechnology",
+    "sections": [
+      {
+        "code": "BT-1",
+        "name": "Engineering Mathematics",
+        "topics": ["Linear algebra", "Calculus", "Differential equations", "Probability and statistics", "Numerical methods"]
+      },
+      {
+        "code": "BT-2",
+        "name": "General Biotechnology",
+        "topics": ["Biochemistry", "Microbiology", "Cell biology", "Molecular biology", "Immunology"]
+      },
+      {
+        "code": "BT-3",
+        "name": "Recombinant DNA Technology",
+        "topics": ["Cloning vectors", "Gene libraries", "PCR", "DNA sequencing", "Gene expression"]
+      },
+      {
+        "code": "BT-4",
+        "name": "Plant and Animal Biotechnology",
+        "topics": ["Plant tissue culture", "Transgenic plants", "Animal cell culture", "Stem cells", "Gene therapy"]
+      },
+      {
+        "code": "BT-5",
+        "name": "Bioprocess Engineering",
+        "topics": ["Bioreactor design", "Kinetics", "Mass transfer", "Scale-up", "Downstream processing"]
+      },
+      {
+        "code": "BT-6",
+        "name": "Process Biotechnology",
+        "topics": ["Fermentation", "Enzyme technology", "Bioseparations", "Bioprocess control", "Industrial biotechnology"]
+      }
+    ]
+  }
+}

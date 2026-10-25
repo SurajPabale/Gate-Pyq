@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="Your focused dashboard for GATE XL and GATE BT preparation.">
+  <title>Overview · GATEprep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="GATEprep home">
+        <span class="brand-mark">G<span>.</span></span>
+        <span class="brand-name">GATE<span>prep</span></span>
+      </a>
+
+      <div class="nav-label">Workspace</div>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="index.html" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="4" rx="1.5"/><rect x="13.5" y="11.5" width="7" height="9" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+          <span>Overview</span>
+        </a>
+        <a class="nav-link" href="daily-mock.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8.25"/><path d="M12 8v5l3 2M9 2.75h6M12 2.75v2"/></svg>
+          <span>Daily mock</span><span class="nav-count">65</span>
+        </a>
+        <a class="nav-link" href="topic-test.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h14a1.5 1.5 0 0 1 1.5 1.5v12a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 18V6A1.5 1.5 0 0 1 5 4.5Z"/><path d="M7.5 8h9M7.5 12h9M7.5 16h5"/></svg>
+          <span>Topic practice</span>
+        </a>
+        <a class="nav-link" href="result.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V12M10 19.5V5M16 19.5v-9M22 19.5V8"/></svg>
+          <span>Results</span>
+        </a>
+      </nav>
+
+      <div class="nav-label nav-label-spaced">Your courses</div>
+      <a class="course-link" href="#courses">
+        <span class="course-dot dot-violet"></span>
+        <span>GATE XL</span><span class="course-code">XL</span>
+      </a>
+      <a class="course-link" href="#courses">
+        <span class="course-dot dot-teal"></span>
+        <span>GATE BT</span><span class="course-code">BT</span>
+      </a>
+
+      <div class="sidebar-bottom">
+        <div class="streak-card">
+          <div class="streak-icon">✦</div>
+          <div><strong>Keep it going</strong><span>Your next study session starts a streak.</span></div>
+        </div>
+        <div class="profile-row">
+          <div class="avatar">S</div>
+          <div class="profile-copy"><strong>Student</strong><span>GATE aspirant</span></div>
+          <button class="icon-button profile-menu" type="button" aria-label="Profile options">···</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu-button" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div class="breadcrumb"><span>Workspace</span><span class="breadcrumb-separator">/</span><strong>Overview</strong></div>
+        <div class="topbar-actions">
+          <div class="study-timer" aria-label="Study timer">
+            <span class="live-dot"></span><span>Study time</span><strong id="study-timer">00:00:00</strong>
+          </div>
+          <button class="icon-button notification-button" type="button" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <section class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span><span id="current-date">YOUR STUDY SPACE</span></div>
+            <h1>Make today <span>count.</span></h1>
+            <p class="welcome-copy">A little progress each day adds up to big results.</p>
+          </div>
+          <a class="button button-primary welcome-cta" href="daily-mock.html">
+            Start a mock test
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </section>
+
+        <section class="stats-grid" aria-label="Study summary">
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Study streak</span><span class="stat-icon icon-orange">✦</span></div>
+            <div class="stat-value">0 <span>days</span></div>
+            <div class="stat-foot"><span class="stat-neutral">Start yours today</span></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Questions practiced</span><span class="stat-icon icon-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h14a1.5 1.5 0 0 1 1.5 1.5v12a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 18V6A1.5 1.5 0 0 1 5 4.5Z"/><path d="M7.5 8h9M7.5 12h9M7.5 16h5"/></svg></span></div>
+            <div class="stat-value" id="questions-count">0</div>
+            <div class="stat-foot"><span class="stat-neutral">Your practice adds up here</span></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Average accuracy</span><span class="stat-icon icon-green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span></div>
+            <div class="stat-value"><span id="accuracy-value">—</span><span class="stat-unit">%</span></div>
+            <div class="stat-foot"><span class="stat-neutral">Complete a test to see your accuracy</span></div>
+          </article>
+          <article class="stat-card stat-card-time">
+            <div class="stat-top"><span class="stat-label">Time studied today</span><span class="stat-icon icon-violet"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8.25"/><path d="M12 8v5l3 2M9 2.75h6M12 2.75v2"/></svg></span></div>
+            <div class="stat-value" id="today-time">0<span>m</span></div>
+            <div class="stat-foot"><span class="stat-neutral">Time spent in this session</span></div>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <div class="main-column">
+            <section class="section-card daily-card">
+              <div class="section-heading">
+                <div><div class="section-kicker">YOUR DAILY PRACTICE</div><h2>Pick up where you left off</h2></div>
+                <span class="today-pill"><span class="pill-dot"></span>Ready when you are</span>
+              </div>
+              <div class="practice-list">
+                <article class="practice-item">
+                  <div class="practice-symbol symbol-amber"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8.25"/><path d="M12 8v5l3 2M9 2.75h6M12 2.75v2"/></svg></div>
+                  <div class="practice-info"><strong>Daily full-length mock</strong><span>65 questions <i></i> 3 hours <i></i> XL + BT</span></div>
+                  <a class="button button-outline" href="daily-mock.html">Start test <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="practice-item">
+                  <div class="practice-symbol symbol-teal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h14a1.5 1.5 0 0 1 1.5 1.5v12a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 18V6A1.5 1.5 0 0 1 5 4.5Z"/><path d="M7.5 8h9M7.5 12h9M7.5 16h5"/></svg></div>
+                  <div class="practice-info"><strong>Practice by topic</strong><span>Choose a subject and focus on one concept</span></div>
+                  <a class="button button-outline" href="topic-test.html">Explore topics <span aria-hidden="true">↗</span></a>
+                </article>
+              </div>
+            </section>
+
+            <section class="section-card courses-card" id="courses">
+              <div class="section-heading">
+                <div><div class="section-kicker">YOUR PREPARATION</div><h2>Courses &amp; syllabus</h2></div>
+                <a class="text-link" href="topic-test.html">View all topics <span aria-hidden="true">→</span></a>
+              </div>
+              <div class="course-cards">
+                <article class="course-progress-card">
+                  <div class="course-card-head"><div class="course-badge badge-xl">XL</div><span class="course-tag tag-xl">LIFE SCIENCES</span></div>
+                  <h3>GATE Life Sciences</h3>
+                  <p>Explore the XL syllabus and practice section-wise.</p>
+                  <div class="progress-caption"><span>Syllabus coverage</span><strong>0%</strong></div>
+                  <div class="progress-track"><span class="progress-fill fill-xl" style="width:0%"></span></div>
+                  <a href="topic-test.html?course=XL" class="course-action">Browse XL topics <span aria-hidden="true">→</span></a>
+                </article>
+                <article class="course-progress-card">
+                  <div class="course-card-head"><div class="course-badge badge-bt">BT</div><span class="course-tag tag-bt">BIOTECHNOLOGY</span></div>
+                  <h3>GATE Biotechnology</h3>
+                  <p>Build your BT concepts, one topic at a time.</p>
+                  <div class="progress-caption"><span>Syllabus coverage</span><strong>0%</strong></div>
+                  <div class="progress-track"><span class="progress-fill fill-bt" style="width:0%"></span></div>
+                  <a href="topic-test.html?course=BT" class="course-action">Browse BT topics <span aria-hidden="true">→</span></a>
+                </article>
+              </div>
+            </section>
+
+            <section class="section-card topics-card">
+              <div class="section-heading">
+                <div><div class="section-kicker">STUDY SMART</div><h2>Explore a topic</h2></div>
+                <a class="text-link" href="topic-test.html">All topics <span aria-hidden="true">→</span></a>
+              </div>
+              <div class="topic-chips" id="topic-chips" aria-live="polite">
+                <span class="topic-chip skeleton-chip"></span><span class="topic-chip skeleton-chip"></span><span class="topic-chip skeleton-chip"></span>
+              </div>
+            </section>
+          </div>
+
+          <aside class="right-column">
+            <section class="section-card goal-card">
+              <div class="section-heading compact-heading"><div><div class="section-kicker">DAILY GOAL</div><h2>Show up for yourself</h2></div></div>
+              <div class="goal-ring-wrap">
+                <div class="goal-ring"><div class="goal-ring-inner"><strong>0<span>%</span></strong><span>of daily goal</span></div></div>
+              </div>
+              <div class="goal-progress-meta"><span>Study for 2 hours</span><strong id="goal-time-label">0 / 120 min</strong></div>
+              <div class="progress-track goal-track"><span class="progress-fill fill-goal" id="goal-progress-fill" style="width:0%"></span></div>
+              <p class="goal-note">Every focused session moves you forward.</p>
+            </section>
+
+            <section class="section-card insight-card">
+              <div class="section-heading compact-heading"><div><div class="section-kicker">A LITTLE REMINDER</div><h2>Keep perspective</h2></div><span class="insight-spark">✦</span></div>
+              <div class="quote-mark">“</div>
+              <blockquote>Consistency beats intensity. Make space for one good study session today.</blockquote>
+              <div class="insight-footer"><span class="insight-line"></span><span>Your GATEprep note</span></div>
+            </section>
+
+            <section class="section-card result-preview">
+              <div class="section-heading compact-heading"><div><div class="section-kicker">TRACK YOUR GROWTH</div><h2>Test results</h2></div></div>
+              <div class="empty-chart">
+                <div class="chart-grid"><span></span><span></span><span></span><span></span></div>
+                <div class="chart-empty-copy"><div class="chart-empty-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V12M10 19.5V5M16 19.5v-9M22 19.5V8"/></svg></div><strong>Your progress will appear here</strong><span>Take a test to start building your history.</span></div>
+              </div>
+              <a class="text-link result-link" href="result.html">Go to results <span aria-hidden="true">→</span></a>
+            </section>
+          </aside>
+        </section>
+        <footer class="page-footer"><span>GATEprep</span><span>Study with intention. Progress at your pace.</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+</body>
+</html>
